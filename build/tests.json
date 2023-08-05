@@ -1,32 +1,32 @@
 {
   "contracts": {
-    "Main": "123d9f9b1881454215c100157b17e97983671dae"
+    "ERC20": "d39601403d5504624c539fd2a80fbb983181c548"
   },
   "tests": {
-    "tests/test_main.py": {
+    "tests/test_ERC20.py": {
       "coverage": false,
       "isolated": false,
-      "results": "...................................",
-      "sha1": "66b34df974f111c9542019b10cb6252457f69b0e",
+      "results": "....................................",
+      "sha1": "6c760ae25192d9520e4732f5c149a228c4ebd03c",
       "txhash": [
-        "3668d064aeca6d62a14b9cd7259e003ec833b1c0",
-        "49cdcbc2bfc6bd164b48d106ee679da49105bf87",
-        "5271652981db8b07759de7408e1ed0a17449baf9",
-        "593b4f8bca9754f9a09f36ec8a6cce8fe3d06f4a",
-        "5b5a5acd8d49abc89c04e1b28427eb6b741a0e7e",
-        "8e73d220e9a4906d550d34dcb3f85a55b5dc4d6b",
-        "9439f0e2cd7c38d5f7a97360b24612c3dc93779b",
-        "b06be3fd449e3985ae41c388c589a2864b22c165",
-        "b1df37db6415851f19a24d9aaef5d07370ce35a0",
-        "b729acb472e950fa50a16317720a0b37dbd07ec6",
-        "bccaad6ba9bd1caa0979ea9a4e31381ffcc6b2cd",
-        "df822f0723a5118efbaaa6b8dc8a7bfb87cf958f"
+        "1f0139780eb492af1e06d2f01e56d7972f7886dd",
+        "3594798704381d608a85835f89fa0aaf0ef6dbaf",
+        "3b9b79922b0c5e3e06efa9f9321ff5e1ea4ef4fc",
+        "50e2ad5191be6b22defc74a0584c85ec3fa8a123",
+        "78b14f88a535a9d043f5e501e1a183d554d4e5a0",
+        "7cfbf19c573cbc65c595cafd5e48eb277a6f958e",
+        "87bba6af06b5a50433fcbc0325ee878531e82ea6",
+        "9f7bcf5c3e4582e28e7d7b99a3cd50e71011ce0f",
+        "bc0f816a56e266a5c534df57312e9de68d2949bc",
+        "c2d5b33beb6a42741fde982aa78fa9ea715d7772",
+        "e16d8f743927dff569dc335895430bac0c075103",
+        "fdad679694129267261b220278c64716e7bdcb58"
       ]
     }
   },
   "tx": {
-    "3668d064aeca6d62a14b9cd7259e003ec833b1c0": {
-      "Main": {
+    "1f0139780eb492af1e06d2f01e56d7972f7886dd": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -34,8 +34,8 @@
         ]
       }
     },
-    "49cdcbc2bfc6bd164b48d106ee679da49105bf87": {
-      "Main": {
+    "3594798704381d608a85835f89fa0aaf0ef6dbaf": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -43,8 +43,21 @@
         ]
       }
     },
-    "5271652981db8b07759de7408e1ed0a17449baf9": {
-      "Main": {
+    "3b9b79922b0c5e3e06efa9f9321ff5e1ea4ef4fc": {
+      "ERC20": {
+        "0": [
+          [
+            0
+          ],
+          [
+            27
+          ],
+          []
+        ]
+      }
+    },
+    "50e2ad5191be6b22defc74a0584c85ec3fa8a123": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -52,8 +65,8 @@
         ]
       }
     },
-    "593b4f8bca9754f9a09f36ec8a6cce8fe3d06f4a": {
-      "Main": {
+    "78b14f88a535a9d043f5e501e1a183d554d4e5a0": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -61,8 +74,8 @@
         ]
       }
     },
-    "5b5a5acd8d49abc89c04e1b28427eb6b741a0e7e": {
-      "Main": {
+    "7cfbf19c573cbc65c595cafd5e48eb277a6f958e": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -70,8 +83,8 @@
         ]
       }
     },
-    "8e73d220e9a4906d550d34dcb3f85a55b5dc4d6b": {
-      "Main": {
+    "87bba6af06b5a50433fcbc0325ee878531e82ea6": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -79,8 +92,8 @@
         ]
       }
     },
-    "9439f0e2cd7c38d5f7a97360b24612c3dc93779b": {
-      "Main": {
+    "9f7bcf5c3e4582e28e7d7b99a3cd50e71011ce0f": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -88,8 +101,8 @@
         ]
       }
     },
-    "b06be3fd449e3985ae41c388c589a2864b22c165": {
-      "Main": {
+    "bc0f816a56e266a5c534df57312e9de68d2949bc": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -97,8 +110,21 @@
         ]
       }
     },
-    "b1df37db6415851f19a24d9aaef5d07370ce35a0": {
-      "Main": {
+    "c2d5b33beb6a42741fde982aa78fa9ea715d7772": {
+      "ERC20": {
+        "0": [
+          [
+            7
+          ],
+          [
+            28
+          ],
+          []
+        ]
+      }
+    },
+    "e16d8f743927dff569dc335895430bac0c075103": {
+      "ERC20": {
         "0": [
           [],
           [],
@@ -106,26 +132,8 @@
         ]
       }
     },
-    "b729acb472e950fa50a16317720a0b37dbd07ec6": {
-      "Main": {
-        "0": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "bccaad6ba9bd1caa0979ea9a4e31381ffcc6b2cd": {
-      "Main": {
-        "0": [
-          [],
-          [],
-          []
-        ]
-      }
-    },
-    "df822f0723a5118efbaaa6b8dc8a7bfb87cf958f": {
-      "Main": {
+    "fdad679694129267261b220278c64716e7bdcb58": {
+      "ERC20": {
         "0": [
           [],
           [],
