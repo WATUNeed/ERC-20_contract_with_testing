@@ -21,11 +21,13 @@ contract ERC20 is IERC20 {
     receive() external payable {
         require(msg.value > 0, "not enough funds!");
         _balances[msg.sender] += msg.value;
+        emit Purchase(msg.sender, msg.value);
     }
 
     function sell(uint256 amount) external enoughTokens(msg.sender, amount) {
         _balances[msg.sender] -= amount;
         payable(msg.sender).transfer(amount);
+        emit Sale(msg.sender, amount);
     }
 
     modifier enoughTokens(address from, uint256 amount) {

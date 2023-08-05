@@ -14,11 +14,6 @@ def token() -> Contract:
     return ERC20.deploy('MAXToken', 'MAX', 1e20, {'from': accounts[0]})
 
 
-@pytest.fixture(scope='function')
-def account(request) -> Account:
-    return accounts[request.param]
-
-
 class TestERC20:
     name = 'MAXToken'
     symbol = 'MAX'
@@ -66,17 +61,17 @@ class TestERC20:
             tx = accounts[0].transfer(Account(token.address), 0)
 
     @pytest.mark.parametrize(
-        'buy, sell, balance',
+        'buy, sell',
         [
-            (100, 50, 50),
-            (100, 100, 0),
+            (100, 50),
+            (100, 100),
         ]
     )
-    def test_sell(self, token: Contract, buy: int, sell: int, balance: int):
+    def test_sell(self, token: Contract, buy: int, sell: int):
         tx = accounts[0].transfer(Account(token.address), buy)
         assert token.balanceOf(accounts[0]) == buy
         tx = token.sell(sell, {'from': accounts[0]})
-        assert token.balanceOf(accounts[0]) == balance
+        assert token.balanceOf(accounts[0]) == buy - sell
 
     def test_revert_sell_no_cash(self, token: Contract):
         with reverts('not enough tokens!'):
@@ -205,3 +200,38 @@ class TestERC20:
         assert token.balanceOf(accounts[0]) == 100
         with reverts('amount is zero!'):
             tx = token.burn(accounts[0], 0, {'from': accounts[0]})
+
+    def test_Transfer_event(self, token: Contract):
+        buy = 100
+        send = 50
+        tx = accounts[0].transfer(Account(token.address), buy)
+        assert token.balanceOf(accounts[0]) == buy
+        tx = token.transfer(accounts[1], send, {'from': accounts[0]})
+        assert token.balanceOf(accounts[1]) == send
+        assert token.balanceOf(accounts[0]) == buy - send
+        event = OrderedDict({'from': accounts[0].address, 'to': accounts[1].address, 'amount': send})
+        assert tx.events['Transfer'] == event
+
+    def test_Approve_event(self, token: Contract):
+        amount = 1000
+        tx = token.approve(accounts[1], amount, {'from': accounts[0]})
+        assert token.allowance(accounts[0], accounts[1]) == amount
+        event = OrderedDict({'owner': accounts[0].address, 'to': accounts[1].address, 'amount': amount})
+        assert tx.events['Approve'] == event
+
+    def test_Purchase_event(self, token: Contract):
+        amount = 1000
+        tx = accounts[0].transfer(Account(token.address), amount)
+        assert token.balanceOf(accounts[0]) == amount
+        event = OrderedDict({'from': accounts[0].address, 'amount': amount})
+        assert tx.events['Purchase'] == event
+
+    def test_Sale_event(self, token: Contract):
+        buy = 1000
+        sell = 500
+        tx = accounts[0].transfer(Account(token.address), buy)
+        assert token.balanceOf(accounts[0]) == buy
+        tx = token.sell(sell, {'from': accounts[0]})
+        assert token.balanceOf(accounts[0]) == buy - sell
+        event = OrderedDict({'from': accounts[0].address, 'amount': sell})
+        assert tx.events['Sale'] == event

@@ -23,4 +23,8 @@ interface IERC20 {
     event Transfer(address indexed from, address indexed to, uint256 amount);
 
     event Approve(address indexed owner, address indexed to, uint256 amount);
+
+    event Purchase(address indexed from, uint256 amount);
+
+    event Sale(address indexed from, uint256 amount);
 }
